@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Skills</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <img src="photo.jpg" alt="My Photo">
+
+        <h1>Hi, I'm Vineela 👋</h1>
+        <h2><span id="typing"></span></h2>
+
+        <p>Web Development Intern</p>
+
+        <a href="resume.pdf" download>
+            <button>Download Resume</button>
+        </a>
+    </header>
+
+    <!-- About -->
+    <section>
+        <h2>About Me</h2>
+
+        <p>
+            I am a beginner web developer learning HTML, CSS and JavaScript.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+
+        <h2>Skills</h2>
+
+        <ul id="skillList">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript (Basic)</li>
+        </ul>
+
+        <input type="text" id="newSkill" placeholder="Add new skill">
+
+        <button onclick="addSkill()">Add Skill</button>
+
+    </section>
+
+    <!-- Projects -->
+    <section>
+        <h2>Projects</h2>
+
+        <p>
+            Portfolio Website, Landing Page, Form Validation, Image Gallery
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2>Contact</h2>
+
+        <p>Email: vineela@example.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Vineela | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+function addSkill() {
+
+    let skillInput = document.getElementById("newSkill");
+    let skillValue = skillInput.value;
+
+    if (skillValue !== "") {
+
+        let li = document.createElement("li");
+        li.textContent = skillValue;
+
+        document.getElementById("skillList").appendChild(li);
+
+        skillInput.value = "";
+    }
+}
+
+/* Typing Effect */
+let text = "Web Developer | Frontend Learner | CS Student";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+    }
+}
+
+typeEffect();
+</script>
